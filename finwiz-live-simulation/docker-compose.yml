@@ -1,0 +1,11 @@
+services:
+  finwiz-simulation:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: 8000
+      FINWIZ_DB: /data/finwiz_simulation.db
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
